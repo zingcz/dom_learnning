@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="./1920x1080.png" alt="waring">
+    </div>
+    <script>
+        //div标签适配任意屏幕
+        var div = document.querySelector('div');
+        var WIDTH = window.innerWidth;
+        var HEIGHT = window.innerHeight;
+        div.style.width = WIDTH + 'px';
+        div.style.height = HEIGHT + 'px';
+        //img标签适配任意屏幕
+        var img = document.querySelector('img');
+        img.width = WIDTH;
+        img.height = HEIGHT;
+        //div img标签随屏幕大小变化
+        window.onresize = function() {
+            WIDTH = window.innerWidth;
+            HEIGHT = window.innerHeight;
+            div.style.width = WIDTH + 'px';
+            div.style.height = HEIGHT + 'px';
+
+            img.width =  WIDTH;
+            img.height = HEIGHT;
+        }
+    </script>
+</body>
+</html>
